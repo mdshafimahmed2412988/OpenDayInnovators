@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - University of Wolverhampton</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png.webp" alt="University of Wolverhampton Logo">
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="university_life.html" class="active">University Life</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search...">
+    </header>
+
+  <main>
+    <section class="types-of-courses">
+        <h1>Types of Courses</h1>
+        <div class="course-types">
+            <div class="course-type undergraduate" onclick="toggleCourses('undergraduate')">
+                <img src="undergraduate.jpg" alt="Undergraduate Courses">
+                <h2>Undergraduate Courses</h2>
+            </div>
+            <div class="course-type postgraduate" onclick="toggleCourses('postgraduate')">
+                <img src="pg.png" alt="Postgraduate Courses">
+                <h2>Postgraduate Courses</h2>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="course-box" id="undergraduate">
+            <div class="course-content">
+    </div>
+    <div class="course-content" id="undergraduate">
+
+      <div class="course-section">
+      <h3>1. BSc Business Management</h3>
+      <p><strong>Overview:</strong> This course provides students with a strong foundation in business principles, leadership, marketing, finance, and entrepreneurship.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Business Environment and Strategy</li>
+        <li>Marketing and Consumer Behavior</li>
+        <li>Financial Accounting and Analysis</li>
+        <li>Human Resource Management</li>
+        <li>Entrepreneurship and Business Innovation</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Business Consultant</li>
+        <li>Marketing Manager</li>
+        <li>Financial Analyst</li>
+        <li>Project Manager</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Real-world case studies and industry projects</li>
+        <li>Internship and placement opportunities</li>
+        <li>Accredited by professional business bodies</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>2. BA Marketing</h3>
+      <p><strong>Overview:</strong> A course designed to equip students with skills in digital marketing, branding, advertising, and consumer psychology.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Digital Marketing and Social Media</li>
+        <li>Market Research and Analytics</li>
+        <li>Advertising and Brand Management</li>
+        <li>Consumer Psychology</li>
+        <li>International Marketing</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Digital Marketing Specialist</li>
+        <li>Advertising Executive</li>
+        <li>Brand Manager</li>
+        <li>Market Research Analyst</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Hands-on experience with industry tools like Google Analytics</li>
+        <li>Live marketing campaigns and business case studies</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>3. BEng Mechanical Engineering</h3>
+      <p><strong>Overview:</strong> This course focuses on mechanical system design, thermodynamics, materials science, and manufacturing processes.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Engineering Mathematics</li>
+        <li>Mechanics of Materials</li>
+        <li>Thermodynamics and Fluid Mechanics</li>
+        <li>Manufacturing Processes</li>
+        <li>Computer-Aided Design (CAD)</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Mechanical Engineer</li>
+        <li>Automotive Engineer</li>
+        <li>Aerospace Engineer</li>
+        <li>Robotics Specialist</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Access to state-of-the-art engineering labs</li>
+        <li>Accredited by professional engineering institutions</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>4. BEng Civil Engineering</h3>
+      <p><strong>Overview:</strong> This program covers structural design, construction management, environmental engineering, and sustainable development.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Structural Analysis and Design</li>
+        <li>Construction Materials and Methods</li>
+        <li>Hydraulics and Water Resources</li>
+        <li>Sustainable Engineering</li>
+        <li>Geotechnical Engineering</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Civil Engineer</li>
+        <li>Structural Engineer</li>
+        <li>Construction Project Manager</li>
+        <li>Environmental Consultant</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Hands-on training with engineering software like AutoCAD and Revit</li>
+        <li>Industry placements with construction firms</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>5. BSc Cybersecurity</h3>
+      <p><strong>Overview:</strong> This course provides students with the skills to protect systems and networks from cyber threats and hacking attempts.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Computer Networks and Security</li>
+        <li>Ethical Hacking and Penetration Testing</li>
+        <li>Cryptography and Data Protection</li>
+        <li>Cybersecurity Risk Management</li>
+        <li>Digital Forensics</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Cybersecurity Analyst</li>
+        <li>Ethical Hacker</li>
+        <li>Information Security Consultant</li>
+        <li>Security Architect</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Access to the latest cybersecurity labs and tools</li>
+        <li>Taught by industry professionals with hands-on hacking simulations</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>6. BSc Nursing</h3>
+      <p><strong>Overview:</strong> A professional course designed to train students in healthcare practices, patient care, and clinical procedures.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Anatomy and Physiology</li>
+        <li>Clinical Skills and Patient Care</li>
+        <li>Public Health and Epidemiology</li>
+        <li>Nursing Ethics and Legal Framework</li>
+        <li>Mental Health Nursing</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Registered Nurse</li>
+        <li>Community Health Nurse</li>
+        <li>Critical Care Nurse</li>
+        <li>Public Health Specialist</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Approved by the Nursing and Midwifery Council (NMC)</li>
+        <li>Practical training in hospitals and healthcare facilities</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>7. LLB Law</h3>
+      <p><strong>Overview:</strong> This course provides students with a comprehensive understanding of legal principles, contract law, criminal law, and human rights.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Introduction to Legal Systems</li>
+        <li>Contract and Tort Law</li>
+        <li>Criminal Law and Justice</li>
+        <li>Human Rights Law</li>
+        <li>Business and Corporate Law</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Lawyer (Solicitor or Barrister)</li>
+        <li>Legal Advisor</li>
+        <li>Corporate Counsel</li>
+        <li>Paralegal</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Accredited by the Solicitors Regulation Authority (SRA)</li>
+        <li>Opportunities for internships in law firms</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>8. BSc Computer Science</h3>
+      <p><strong>Overview:</strong> A degree that provides knowledge of software development, artificial intelligence, and big data analytics.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Programming in Python and Java</li>
+        <li>Database Systems and SQL</li>
+        <li>Artificial Intelligence and Machine Learning</li>
+        <li>Web and Mobile Application Development</li>
+        <li>Cloud Computing and Big Data</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Software Developer</li>
+        <li>Data Scientist</li>
+        <li>IT Consultant</li>
+        <li>AI Engineer</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Industry placements with tech companies</li>
+        <li>Access to supercomputing and AI labs</li>
+      </ul>
+    </div>
+    </section>
+
+    <section>
+        <div class="course-box" id="postgraduate">
+            <div class="course-content">
+
+      <div class="course-section">
+      <h3>1. MBA (Master of Business Administration)</h3>
+      <p><strong>Overview:</strong> Designed for professionals looking to enhance their leadership and strategic management skills.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Strategic Business Management</li>
+        <li>Financial Decision Making</li>
+        <li>Organizational Leadership</li>
+        <li>Digital Transformation in Business</li>
+        <li>Global Marketing Strategies</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Business Consultant</li>
+        <li>Corporate Executive</li>
+        <li>Entrepreneur</li>
+        <li>Operations Manager</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Accredited by global business institutions</li>
+        <li>Strong networking and career mentoring opportunities</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>2. MSc Artificial Intelligence & Data Science</h3>
+      <p><strong>Overview:</strong> This program equips students with advanced AI, deep learning, and data analytics skills.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Machine Learning and Neural Networks</li>
+        <li>Data Mining and Big Data Analytics</li>
+        <li>AI for Business and Healthcare</li>
+        <li>Predictive Modeling and Simulation</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>AI Engineer</li>
+        <li>Data Scientist</li>
+        <li>Research Scientist</li>
+        <li>Machine Learning Specialist</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Hands-on projects in real-world AI applications</li>
+        <li>Strong collaborations with tech companies</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>3. MSc Civil Engineering & Construction Management</h3>
+      <p><strong>Overview:</strong> This course develops skills in project management, infrastructure planning, and sustainable development.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Advanced Structural Engineering</li>
+        <li>Construction Project Management</li>
+        <li>Sustainable Infrastructure</li>
+        <li>Risk and Cost Analysis in Construction</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Civil Engineer</li>
+        <li>Project Manager</li>
+        <li>Structural Engineer</li>
+        <li>Construction Consultant</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Industry partnerships with construction firms</li>
+        <li>Hands-on experience with real-world projects</li>
+      </ul>
+    </div>
+
+      <div class="course-section">
+      <h3>4. MSc Psychology</h3>
+      <p><strong>Overview:</strong> A research-oriented course designed to provide insights into human behavior and mental health.</p>
+      <p><strong>Core Modules:</strong></p>
+      <ul>
+        <li>Cognitive and Behavioral Psychology</li>
+        <li>Clinical and Counseling Psychology</li>
+        <li>Neuroscience and Mental Health</li>
+        <li>Psychological Research Methods</li>
+      </ul>
+      <p><strong>Career Opportunities:</strong></p>
+      <ul>
+        <li>Clinical Psychologist</li>
+        <li>Mental Health Counselor</li>
+        <li>Educational Psychologist</li>
+        <li>Organizational Psychologist</li>
+      </ul>
+      <p><strong>Why Choose This Course?</strong></p>
+      <ul>
+        <li>Accredited by the British Psychological Society (BPS)</li>
+        <li>Strong focus on practical and research-based learning</li>
+      </ul>
+    </div>
+    </section>
+  </main>
+<footer>
+    <p>&copy; 2025 University of Wolverhampton. All rights reserved.</p>
+</footer>
+<script>
+   
+    function toggleCourses(id) {
+        const content = document.getElementById(id);
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
