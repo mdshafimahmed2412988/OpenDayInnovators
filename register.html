@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Visit - University of Wolverhampton</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fix menu alignment */
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .main-menu li {
+            display: inline;
+        }
+
+        .main-menu li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        /* Hide comment box initially */
+        #otherReason {
+            display: none;
+        }
+
+        #otherCourseBox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png.webp" alt="University of Wolverhampton Logo">
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="register.html" class="active">Book Visit</a></li> 
+                <li><a href="university_life.html">University Life</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="register">
+            <h1>Book a Visit</h1>
+            <p>Fill in the form below to book your campus visit.</p>
+
+            <form id="bookingForm" action="confirm_booking.php" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Preferred Visit Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time:</label>
+                <select id="time" name="time" required>
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                </select>
+
+                <label for="purpose">Purpose of Visit:</label>
+                <select id="purpose" name="purpose" required>
+                    <option value="" disabled selected>Select a reason</option>
+                    <option value="Campus Tour">Campus Tour</option>
+                    <option value="Course Enquiry">Course Enquiry</option>
+                    <option value="Student Services">Student Services</option>
+                    <option value="Accommodation Visit">Accommodation Visit</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <!-- Extra comment box for "Other" selection -->
+                <div id="otherReason">
+                    <label for="otherText">Please specify:</label>
+                    <input type="text" id="otherText" name="otherText">
+                </div>
+
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>Select a course</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <!-- Extra input box for "Other" course selection -->
+                <div id="otherCourseBox">
+                    <label for="otherCourse">Please specify:</label>
+                    <input type="text" id="otherCourse" name="otherCourse">
+                </div>
+
+                <button type="submit">Confirm Booking</button>
+
+                <div class="back-home">
+                    <a href="index.html" class="btn">← Back to Open Day Page</a>
+                </div>
+            </form>
+
+            <p id="confirmationMessage" style="display: none; color: green; font-weight: bold;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 University of Wolverhampton. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("purpose").addEventListener("change", function() {
+            let otherReason = document.getElementById("otherReason");
+            if (this.value === "Other") {
+                otherReason.style.display = "block";
+                document.getElementById("otherText").setAttribute("required", "true");
+            } else {
+                otherReason.style.display = "none";
+                document.getElementById("otherText").removeAttribute("required");
+            }
+        });
+
+        document.getElementById("course").addEventListener("change", function() {
+            let otherCourseBox = document.getElementById("otherCourseBox");
+            if (this.value === "Other") {
+                otherCourseBox.style.display = "block";
+                document.getElementById("otherCourse").setAttribute("required", "true");
+            } else {
+                otherCourseBox.style.display = "none";
+                document.getElementById("otherCourse").removeAttribute("required");
+            }
+        });
+
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+            let purpose = document.getElementById("purpose").value;
+            let otherText = document.getElementById("otherText").value;
+            let course = document.getElementById("course").value;
+            let otherCourse = document.getElementById("otherCourse").value;
+
+            if (!name || !email || !phone || !date || !time || !purpose || !course || (purpose === "Other" && !otherText) || (course === "Other" && !otherCourse)) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            let confirmationMessage = document.getElementById("confirmationMessage");
+            let visitPurpose = purpose === "Other" ? `Other: ${otherText}` : purpose;
+            let selectedCourse = course === "Other" ? `Other: ${otherCourse}` : course;
+            
+            confirmationMessage.innerHTML = `Thank you, ${name}! Your visit for "${visitPurpose}" on ${date} at ${time} for the course "${selectedCourse}" is confirmed.`;
+            confirmationMessage.style.display = "block";
+
+            document.getElementById("bookingForm").reset();
+            document.getElementById("otherReason").style.display = "none";
+            document.getElementById("otherCourseBox").style.display = "none";
+        });
+    </script>
+</body>
+</html>
