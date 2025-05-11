@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Open Day Visit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #001f3f;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: #003974;
+        }
+
+        /* Header */
+        .header {
+            background-color: #002147;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .header h1 {
+            margin: 10px 0 0;
+            font-size: 24px;
+        }
+
+        /* Wrapper for Form */
+        .wrapper {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form Styling */
+        h2 {
+            color: #002147;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-box input,
+        .input-box select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-box input[type="date"] {
+            padding: 8px;
+        }
+
+        .btn {
+            background-color: #0055A4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #003974;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #1a5da0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-home a {
+            color: #1a5da0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="booking.html">Book Visit</a>
+        <a href="university_life.html">University Life</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Register / Login</a>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="logo.png.webp" alt="University Logo">
+        <h1>Book Your Open Day Visit</h1>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="wrapper">
+        <form action="booking.php" method="post">
+            <h2>Personal Details</h2>
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name" required/>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Email Address" required/>
+            </div>
+            <div class="input-box">
+                <input type="text" name="phone" placeholder="Phone Number" required/>
+            </div>
+
+            <h2>Event Details</h2>
+            <div class="input-box">
+                <label for="visit_date">Preferred Visit Date:</label>
+                <input type="date" name="visit_date" id="visit_date" required/>
+            </div>
+            <div class="input-box">
+                <label for="visit_time">Preferred Time:</label>
+                <select name="visit_time" id="visit_time" required>
+                    <option value="">Select a time</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="purpose">Purpose of Visit:</label>
+                <select name="purpose" id="purpose" required>
+                    <option value="">Select a reason</option>
+                    <option value="Campus Tour">Campus Tour</option>
+                    <option value="Admissions Inquiry">Admissions Inquiry</option>
+                    <option value="Course Information">Course Information</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="course">Select Course:</label>
+                <select name="course" id="course" required>
+                    <option value="">Select a course</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Business Management">Business Management</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Psychology">Psychology</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+
+        <div class="register-link">
+            <p>Don't have an account? <a href="register.html">Register Now</a></p>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html" class="btn">← Back to Open Day Page</a>
+        </div>
+    </div>
+
+</body>
+</html>

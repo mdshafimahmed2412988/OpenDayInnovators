@@ -62,7 +62,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="register.html">Book Visit</a></li>
+                <li><a href="booking.html">Book Visit</a></li>
                 <li><a href="university_life.html">University Life</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
                 <li><a href="news.html">News</a></li>
@@ -80,7 +80,7 @@
         <div class="contact-container">
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
-                <form id="contactForm">
+                <form action="contact.php" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
@@ -159,10 +159,10 @@
             <div class="footer-section">
                 <h3>Connect With Us</h3>
                 <div class="social-icons">
-                    <a href="#"><img src="/Users/tonmoy/Desktop/fb.png" alt="Facebook"></a>
-                    <a href="#"><img src="/Users/tonmoy/Desktop/twitter.png" alt="Twitter"></a>
-                    <a href="#"><img src="/Users/tonmoy/Desktop/ig.jpeg" alt="Instagram"></a>
-                    <a href="#"><img src="/Users/tonmoy/Desktop/linkdln.png " alt="LinkedIn"></a>
+                    <a href="#"><img src="fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="ig.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="linkdln.png " alt="LinkedIn"></a>
                 </div>
             </div>
         </div>
@@ -171,12 +171,5 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message. We will respond to you shortly.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>

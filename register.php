@@ -1,38 +1,43 @@
 <?php
+// register.php
+
+// Collect form data
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// Database Connection
-$conn = new mysqli('localhost', 'root', '', 'openday');
+// Password strength validation
+if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/", $password)) {
+    header("Location: register.html?error=weak_password");
+    exit();
+}
 
+// DB connection
+$conn = new mysqli('localhost', 'root', '', 'openday');
 if ($conn->connect_error) {
     die('Connection Failed: ' . $conn->connect_error);
 }
 
-// Check if the email already exists
-$check_email = "SELECT * FROM registration WHERE email = ?";
-$stmt = $conn->prepare($check_email);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
+// Check duplicate email
+$check_email = $conn->prepare("SELECT * FROM registration WHERE email = ?");
+$check_email->bind_param("s", $email);
+$check_email->execute();
+$result = $check_email->get_result();
 
 if ($result->num_rows > 0) {
-    // Email already exists
-    echo "<script>alert('Email already registered! Please use a different email.'); window.location.href='register.html';</script>";
-    $stmt->close();
-    $conn->close();
+    header("Location: register.html?error=email_exists");
     exit();
 }
 
-// Insert new user if email is not found
+// Hash and insert
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 $stmt = $conn->prepare("INSERT INTO registration (name, email, password) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $name, $email, $password);
+$stmt->bind_param("sss", $name, $email, $hashed_password);
 
 if ($stmt->execute()) {
     echo "<script>alert('Registration Successful! You can now login.'); window.location.href='login.html';</script>";
 } else {
-    echo "<script>alert('Error: Registration failed. Please try again.'); window.location.href='register.html';</script>";
+    header("Location: register.html?error=register_fail");
 }
 
 $stmt->close();

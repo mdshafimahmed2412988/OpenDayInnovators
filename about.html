@@ -4,11 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - University of Wolverhampton</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: #004A8F;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 22%;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .stat-box h3 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .leader-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .leader-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        .leader-card h3 {
+            color: #004A8F;
+            margin-bottom: 5px;
+        }
+        .leader-card p {
+            color: #666;
+        }
+        .campus-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            background: #eee;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tab-button.active {
+            background: #004A8F;
+            color: white;
+        }
+        .campus-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .mission-grid, .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .mission-item, .value-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .success-stories {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        .story-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .story-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left;
+            margin-right: 20px;
+        }
+        .story-content {
+            overflow: hidden;
+        }
+        .story-content h3 {
+            margin-top: 0;
+            color: #004A8F;
+        }
+        @media (max-width: 768px) {
+            .stat-box {
+                width: 45%;
+            }
+            .story-card img {
+                float: none;
+                display: block;
+                margin: 0 auto 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .stat-box {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    
     <header>
         <div class="logo">
             <img src="logo.png.webp" alt="University of Wolverhampton Logo">
@@ -17,12 +140,17 @@
             <ul class="main-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="courses.html" class="active">Courses</a></li>
-                <li><a href="register.html">Book Visit</a></li> 
-                <li><a href="university_life.html" class="active">University Life</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="booking.html">Book Visit</a></li>
+                <li><a href="university_life.html">University Life</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <input type="text" placeholder="Search...">
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>🔍</button>
+        </div>
     </header>
 
     <section class="welcome">
@@ -30,83 +158,214 @@
         <p>At the University of Wolverhampton, we are committed to empowering students with knowledge, skills, and real-world experience to help them succeed in their chosen careers. With a proud history of over 190 years, we continue to provide innovative education and research across a variety of disciplines.</p>
     </section>
 
-   
+    <div class="stats-container">
+        <div class="stat-box">
+            <h3>190+</h3>
+            <p>Years of Academic Excellence</p>
+        </div>
+        <div class="stat-box">
+            <h3>23,000+</h3>
+            <p>Students Enrolled</p>
+        </div>
+        <div class="stat-box">
+            <h3>130+</h3>
+            <p>Countries Represented</p>
+        </div>
+        <div class="stat-box">
+            <h3>94%</h3>
+            <p>Graduate Employability Rate</p>
+        </div>
+    </div>
+
     <section class="history">
         <h2>Our History & Legacy</h2>
-        <p>Founded in 1827 as the Wolverhampton Mechanics’ Institute, the University of Wolverhampton has grown into a globally recognized institution with multiple campuses, cutting-edge research facilities, and a strong industry presence.</p>
-        <p>Over the years, we have expanded our academic offerings, built state-of-the-art facilities, and cultivated strong partnerships with leading industries and organizations to ensure that our students receive world-class education.</p>
+        <p>Founded in 1827 as the Wolverhampton Mechanics' Institute, the University of Wolverhampton has grown into a globally recognized institution with multiple campuses, cutting-edge research facilities, and a strong industry presence.</p>
+        <p>Our journey from a small technical college to a comprehensive university has been marked by innovation and expansion. In 1969, we became Wolverhampton Polytechnic, and in 1992, we were granted university status.</p>
+        <p>Today, we continue to build on our legacy of providing accessible, high-quality education that transforms lives and communities.</p>
     </section>
 
     <section class="mission">
         <h2>Our Mission & Values</h2>
-        <h3>Our Mission:</h3>
-        <ul>
-            <li>To provide inclusive, high-quality education that empowers students from all backgrounds.</li>
-            <li>To foster innovation, creativity, and research excellence.</li>
-            <li>To support global engagement and employability.</li>
-        </ul>
+        <div class="mission-grid">
+            <div class="mission-item">
+                <h3>Our Mission:</h3>
+                <ul>
+                    <li>To provide inclusive, high-quality education that empowers students from all backgrounds</li>
+                    <li>To foster innovation, creativity, and research excellence</li>
+                    <li>To support global engagement and employability</li>
+                    <li>To contribute to the economic, social, and cultural development of our region</li>
+                </ul>
+            </div>
+            <div class="mission-item">
+                <h3>Our Vision:</h3>
+                <p>To be a leading modern university recognized for our commitment to student success, impactful research, and community engagement.</p>
+            </div>
+        </div>
 
         <h3>Our Values:</h3>
-        <ul>
-            <li><strong>Excellence</strong> – Striving for the highest academic and research standards.</li>
-            <li><strong>Innovation</strong> – Driving new ideas and creative learning.</li>
-            <li><strong>Diversity & Inclusion</strong> – Welcoming students from all backgrounds.</li>
-            <li><strong>Employability</strong> – Preparing students for the professional world.</li>
-        </ul>
+        <div class="values-grid">
+            <div class="value-item">
+                <h4>Excellence</h4>
+                <p>Striving for the highest academic and research standards in all we do.</p>
+            </div>
+            <div class="value-item">
+                <h4>Innovation</h4>
+                <p>Driving new ideas and creative approaches to learning and problem-solving.</p>
+            </div>
+            <div class="value-item">
+                <h4>Inclusivity</h4>
+                <p>Creating an environment where everyone feels welcome and supported.</p>
+            </div>
+            <div class="value-item">
+                <h4>Integrity</h4>
+                <p>Acting with honesty, fairness, and transparency in all our dealings.</p>
+            </div>
+        </div>
     </section>
 
-   
+    <section class="leadership">
+        <h2>University Leadership</h2>
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <img src="/Users/tonmoy/Desktop/download.jpeg" alt="Vice-Chancellor">
+                <h3>Professor Ebrahim Adia</h3>
+                <p>Vice-Chancellor</p>
+            </div>
+            <div class="leader-card">
+                <img src="/Users/tonmoy/Desktop/juliajpeg.jpeg " alt="Deputy Vice-Chancellor">
+                <h3>Professor Julia Clarke</h3>
+                <p>Deputy Vice-Chancellor</p>
+            </div>
+            <div class="leader-card">
+                <img src="/Users/tonmoy/Desktop/ian.jpeg" alt="University Registrar">
+                <h3>Dr. Ian Campbell</h3>
+                <p>University Registrar</p>
+            </div>
+            <div class="leader-card">
+                <img src="/Users/tonmoy/Desktop/images.jpeg " alt="Director of Finance">
+                <h3>Sarah Duggan</h3>
+                <p>Director of Finance</p>
+            </div>
+        </div>
+    </section>
+
     <section class="campuses">
-        <h2>Campuses & Facilities</h2>
-        <p>The University of Wolverhampton has three main campuses:</p>
-        <ul>
-            <li><strong>City Campus (Wolverhampton)</strong> – Located in the heart of the city, featuring modern classrooms, research centers, and student services.</li>
-            <li><strong>Walsall Campus</strong> – Home to the School of Sport, Performing Arts, and Education, with world-class gym facilities and a sports complex.</li>
-            <li><strong>Telford Campus</strong> – A hub for engineering, business, and technology programs, equipped with high-tech labs and innovation centers.</li>
-        </ul>
-        <p>We also have specialized learning spaces, including digital media labs, health simulation centers, and a multi-million-pound business school.</p>
+        <h2>Our Campuses & Facilities</h2>
+        <div class="campus-tabs">
+            <button class="tab-button active" onclick="openCampus('city')">City Campus</button>
+            <button class="tab-button" onclick="openCampus('walsall')">Walsall Campus</button>
+            <button class="tab-button" onclick="openCampus('telford')">Telford Campus</button>
+        </div>
+        
+        <div id="city" class="campus-content" style="display:block">
+            <h3>City Campus (Wolverhampton)</h3>
+            <p>Our flagship campus in the heart of Wolverhampton features modern classrooms, research centers, and student services. Highlights include:</p>
+            <ul>
+                <li>£45 million Springfield Campus for architecture and built environment</li>
+                <li>State-of-the-art performing arts facilities</li>
+                <li>Newly renovated library with 24/7 access</li>
+                <li>Student union and social spaces</li>
+            </ul>
+        </div>
+        
+        <div id="walsall" class="campus-content" style="display:none">
+            <h3>Walsall Campus</h3>
+            <p>Home to the School of Sport, Performing Arts, and Education, with world-class facilities including:</p>
+            <ul>
+                <li>£16 million sports center with Olympic-standard facilities</li>
+                <li>Specialist education and teaching labs</li>
+                <li>Performing arts studios and theater</li>
+                <li>On-campus accommodation</li>
+            </ul>
+        </div>
+        
+        <div id="telford" class="campus-content" style="display:none">
+            <h3>Telford Campus</h3>
+            <p>A hub for engineering, business, and technology programs featuring:</p>
+            <ul>
+                <li>£10 million engineering and digital innovation center</li>
+                <li>Advanced manufacturing labs</li>
+                <li>Business incubator space</li>
+                <li>Industry-standard computing facilities</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="student-life">
-        <h2>Student Life & Community</h2>
-        <p>Being a part of the University of Wolverhampton means joining a vibrant student community with numerous opportunities for social engagement, leadership, and personal growth.</p>
-        <ul>
-            <li>Over <strong>100+ student societies</strong> for different interests and cultures.</li>
-            <li>State-of-the-art <strong>sports facilities</strong>, including gyms, football fields, and swimming pools.</li>
-            <li><strong>Internships</strong> and career development programs to boost employability.</li>
-            <li><strong>International student support</strong> to help students settle in and succeed.</li>
-        </ul>
+    <section class="success-stories">
+        <h2>Student Success Stories</h2>
+        <div class="story-card">
+            <img src="/Users/tonmoy/Desktop/WLV_Alumni-22.jpg " alt="Mike Chinn">
+            <div class="story-content">
+                <h3>Mike Chinn - BA Creative and Professional Writing and Media Graduate </h3>
+                <p>" The University enabled us to meet and start a business together where we can employ other graduates… And we’re still working together today!."</p>
+                <p>Co-Founder, with fellow alumnus Matt Weston</p>
+            </div>
+        </div>
+        <div class="story-card">
+            <img src="/Users/tonmoy/Desktop/WLV_Alumni-13.jpg " alt="Val Wright">
+            <div class="story-content">
+                <h3>Val Wright - BTEC Business & Finance Graduate</h3>
+                <p>"It’s really important to make learning fun and real. I’d learn something and be immediately applying it the next day at work."</p>
+                <p>President</p>
+            </div>
+        </div>
+        <div class="story-card">
+            <img src="/Users/tonmoy/Desktop/Damien-Fozard.png " alt="Damien Fozard">
+            <div class="story-content">
+                <h3>Damien Fozard - Computer Science Graduate</h3>
+                <p>"To grow and succeed we need great foundations, I learned at Wolverhampton they come from applying the rigor and discipline of your craft."</p>
+                <p>Founder & CEO</p>
+            </div>
+        </div>
     </section>
-
-    <section class="why-choose-us">
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>✔ Over <strong>190 years</strong> of academic excellence.</li>
-            <li>✔ Top-tier research programs and world-class faculty.</li>
-            <li>✔ Strong industry connections and job placement support.</li>
-            <li>✔ Affordable tuition with scholarships and funding options.</li>
-            <li>✔ Multi-campus experience with modern facilities.</li>
-            <li>✔ A diverse and inclusive community of students from <strong>130+ countries</strong>.</li>
-        </ul>
-    </section>
-
-    <section class="contact-info">
-        <h2>Contact Information</h2>
-        <p><strong>📍 University of Wolverhampton</strong></p>
-        <p><strong>Address:</strong> Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
-        <p><strong>📞 Phone:</strong> +44 (0)1902 321000</p>
-        <p><strong>📧 Email:</strong> <a href="mailto:info@wlv.ac.uk">info@wlv.ac.uk</a></p>
-        <p><strong>🌐 Website:</strong> <a href="https://www.wlv.ac.uk" target="_blank">www.wlv.ac.uk</a></p>
-    </section>
-
-
-    <div class="back-home">
-        <a href="index.html" class="btn">← Back to Open Day Page</a>
-    </div>
 
     <footer>
-        <p>&copy; 2025 University of Wolverhampton. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="register.html">Book Visit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
+                <p>Phone: +44 (0)1902 321000</p>
+                <p>Email: info@wlv.ac.uk</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="ig.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="linkdln.png " alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 University of Wolverhampton. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
     </footer>
 
+    <script>
+        function openCampus(campusName) {
+            const contents = document.getElementsByClassName("campus-content");
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            
+            const buttons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].className = buttons[i].className.replace(" active", "");
+            }
+            
+            document.getElementById(campusName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>

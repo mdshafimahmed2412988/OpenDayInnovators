@@ -5,23 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University of Wolverhampton - Open Day</title>
     <link rel="stylesheet" href="styles.css"> 
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px 20px;
+        }
+
+        .main-menu {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .main-menu li {
+            display: inline;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .auth-buttons {
+            margin-left: 20px;
+        }
+
+        .auth-btn {
+            padding: 8px 16px;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .auth-btn:hover {
+            background-color: #003366;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
-
-    
     <header>
         <div class="logo">
             <img src="logo.png.webp" alt="University of Wolverhampton Logo">
         </div>
-        <nav>
-       <ul class="main-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="courses.html" class="active">Courses</a></li>
-                <li><a href="register.html">Book Visit</a></li> <!-- Added by Obaida Qasem, Student No: 2213884 -->
-                <li><a href="university_life.html" class="active">University Life</a></li>
-            </ul>
-        </nav>
+        <div class="header-right">
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="booking.html">Book Visit</a></li>
+                    <li><a href="university_life.html">University Life</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="register.html" class="auth-btn">Register / Login</a>
+            </div>
+        </div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>🔍</button>
@@ -33,14 +93,14 @@
         <div class="hero-overlay"></div>
         <h1><span>Open Day at the University of Wolverhampton</span></h1>
         <p>Discover Your Future – Join Our Open Day!</p>
-        <a href="register.html" class="cta-btn">Book Visit</a> <!-- Updated by Obaida Qasem, Student No: 2213884 -->
+        <a href="booking.html" class="cta-btn">Book Visit</a>
     </section>
 
     <section class="intro">
         <h2>Discover Your Future at the University of Wolverhampton Open Day!</h2>
         <p>
-            Attending an Open Day is the best way to experience what it’s like to study at the University of Wolverhampton.
-            Whether you’re a prospective undergraduate, postgraduate, or international student, our Open Day provides the
+            Attending an Open Day is the best way to experience what it's like to study at the University of Wolverhampton.
+            Whether you're a prospective undergraduate, postgraduate, or international student, our Open Day provides the
             perfect opportunity to explore our campuses, meet staff and students, and learn more about your chosen course.
         </p>
     </section>
@@ -121,7 +181,7 @@
                 <img src="lecture.jpg" alt="Interactive Workshops">
                 <h3>6. Interactive Workshops & Taster Sessions <span class="toggle-btn">[+]</span></h3>
                 <div class="hidden-content">
-                    <p>Engage in mini-lectures, workshops, and hands-on activities in your subject area. Experience what it’s like to study at Wolverhampton with practical sessions in fields such as:</p>
+                    <p>Engage in mini-lectures, workshops, and hands-on activities in your subject area. Experience what it's like to study at Wolverhampton with practical sessions in fields such as:</p>
                     <ul>
                         <li>Business and Management</li>
                         <li>Engineering and Technology</li>
@@ -137,7 +197,7 @@
     </section>
 
     <section class="conclusion">
-        <h2>What You’ll Gain from Attending</h2>
+        <h2>What You'll Gain from Attending</h2>
         <ul>
             <li>✔ Have a clear understanding of your chosen course and career prospects</li>
             <li>✔ Feel confident about applying and securing a place at Wolverhampton</li>
@@ -147,7 +207,35 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 University of Wolverhampton. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="booking.html">Book Visit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
+                <p>Phone: +44 (0)1902 321000</p>
+                <p>Email: info@wlv.ac.uk</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="ig.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="linkdln.png " alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 University of Wolverhampton. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
     </footer>
 
     <script src="script.js"></script> 

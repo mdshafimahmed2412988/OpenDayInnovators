@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events - University of Wolverhampton</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 20px;
+        }
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .news-tag {
+            display: inline-block;
+            background: #004A8F;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .news-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .filter-btn {
+            padding: 8px 15px;
+            background: #eee;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .filter-btn.active {
+            background: #004A8F;
+            color: white;
+        }
+        .events-list {
+            margin-top: 40px;
+        }
+        .event-item {
+            display: flex;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .event-date {
+            background: #004A8F;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            min-width: 100px;
+        }
+        .event-day {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .event-month {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .event-details {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        .event-time {
+            color: #666;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png.webp" alt="University of Wolverhampton Logo">
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="booking.html">Book Visit</a></li>
+                <li><a href="university_life.html">University Life</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search...">
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>University News & Events</h1>
+            <p>Stay updated with the latest news, research breakthroughs, and upcoming events at the University of Wolverhampton.</p>
+        </section>
+
+        <div class="news-filter">
+            <button class="filter-btn active" data-filter="all">All News</button>
+            <button class="filter-btn" data-filter="research">Research</button>
+            <button class="filter-btn" data-filter="student">Student Life</button>
+            <button class="filter-btn" data-filter="alumni">Alumni</button>
+            <button class="filter-btn" data-filter="awards">Awards</button>
+        </div>
+
+        <div class="news-container">
+            <div class="news-card" data-category="research">
+                
+                <div class="news-content">
+                    <span class="news-tag">Research</span>
+                    <span class="news-date">15 March 2025</span>
+                    <h3 class="news-title">University Scientists Make Breakthrough in Renewable Energy</h3>
+                    <p>Our research team has developed a new method for storing solar energy more efficiently, potentially revolutionizing renewable energy solutions.</p>
+                    <a href="news-item.html" class="read-more">Read more →</a>
+                </div>
+            </div>
+            <div class="news-card" data-category="student">
+    <div class="news-content">
+        <span class="news-tag">Student Life</span>
+        <span class="news-date">10 March 2025</span>
+        <h3 class="news-title">Student Union Announces New Mental Health Initiatives</h3>
+        <p>The SU has launched three new programs to support student wellbeing, including 24/7 counseling and mindfulness workshops.</p>
+        <a href="https://www.wlv.ac.uk/news-and-events/news/2023/march-2023/university-launches-wellbeing-campaign.php" class="read-more" target="_blank">Read more →</a>
+    </div>
+</div>
+
+            
+
+            <div class="news-card" data-category="awards">
+               
+                <div class="news-content">
+                    <span class="news-tag">Awards</span>
+                    <span class="news-date">5 March 2025</span>
+                    <h3 class="news-title">University Wins Green Campus Award for Third Year Running</h3>
+                    <p>Our sustainability efforts have been recognized with the prestigious Green Campus Award, highlighting our commitment to environmental responsibility.</p>
+                    <a href="news-item.html" class="read-more">Read more →</a>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="alumni">
+                
+                <div class="news-content">
+                    <span class="news-tag">Alumny</span>
+                    <span class="news-date">28 February 2025</span>
+                    <h3 class="news-title">Alumnus Named CEO of Fortune 500 Company</h3>
+                    <p>Sarah Johnson (Business Management, 2010) has been appointed CEO of TechGlobal, becoming one of the youngest leaders in the FTSE 100.</p>
+                    <a href="news-item.html" class="read-more">Read more →</a>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="research">
+               
+                <div class="news-content">
+                    <span class="news-tag">Research</span>
+                    <span class="news-date">20 February 2025</span>
+                    <h3 class="news-title">New Study Reveals Impact of Urban Green Spaces on Mental Health</h3>
+                    <p>Psychology researchers publish groundbreaking findings on how access to parks and green areas affects urban dwellers' wellbeing.</p>
+                    <a href="news-item.html" class="read-more">Read more →</a>
+                </div>
+            </div>
+
+            <div class="news-card" data-category="student">
+    <div class="news-content">
+        <span class="news-tag">Student Life</span>
+        <span class="news-date">15 February 2025</span>
+        <h3 class="news-title">Record Number of Students Participate in Annual Charity Marathon</h3>
+        <p>Over 1,200 students and staff raised £50,000 for local charities in this year's Wolverhampton Runs event.</p>
+        <a href="https://www.wlv.ac.uk/news-and-events/" class="read-more" target="_blank">Read more →</a>
+    </div>
+</div>
+        </div>
+
+        <section class="events-list">
+            <h2>Upcoming Events</h2>
+            
+            <div class="event-item">
+                <div class="event-date">
+                    <div class="event-day">25</div>
+                    <div class="event-month">Mar</div>
+                </div>
+                <div class="event-details">
+                    <div class="event-time">10:00 AM - 4:00 PM | City Campus</div>
+                    <h3>Spring Open Day</h3>
+                    <p>Explore our courses, meet academics, and tour our facilities at our Spring Open Day.</p>
+                    <a href="register.html" class="event-link">Book your place →</a>
+                </div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">
+                    <div class="event-day">05</div>
+                    <div class="event-month">Apr</div>
+                </div>
+                <div class="event-details">
+                    <div class="event-time">6:00 PM - 8:00 PM | Online</div>
+                    <h3>Careers in Engineering Webinar</h3>
+                    <p>Hear from industry leaders about career opportunities in various engineering fields.</p>
+                    <a href="#" class="event-link">Register →</a>
+                </div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">
+                    <div class="event-day">15</div>
+                    <div class="event-month">Apr</div>
+                </div>
+                <div class="event-details">
+                    <div class="event-time">All Day | Walsall Campus</div>
+                    <h3>Sports Scholarship Trials</h3>
+                    <p>Talented athletes can try out for our prestigious sports scholarship program.</p>
+                    <a href="#" class="event-link">Learn more →</a>
+                </div>
+            </div>
+            
+            <div class="event-item">
+                <div class="event-date">
+                    <div class="event-day">22</div>
+                    <div class="event-month">Apr</div>
+                </div>
+                <div class="event-details">
+                    <div class="event-time">7:00 PM | Grand Theatre</div>
+                    <h3>Annual Music Society Concert</h3>
+                    <p>Enjoy an evening of performances by our talented student musicians.</p>
+                    <a href="#" class="event-link">Get tickets →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="register.html">Book Visit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
+                <p>Phone: +44 (0)1902 321000</p>
+                <p>Email: info@wlv.ac.uk</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="ig.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="linkdln.png " alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 University of Wolverhampton. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // News filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                const newsCards = document.querySelectorAll('.news-card');
+                
+                newsCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
