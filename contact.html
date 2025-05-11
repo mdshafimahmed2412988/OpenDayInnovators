@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - University of Wolverhampton</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background: #004A8F;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .map-container {
+            margin-top: 30px;
+        }
+        .department-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png.webp" alt="University of Wolverhampton Logo">
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="register.html">Book Visit</a></li>
+                <li><a href="university_life.html">University Life</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Search...">
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Contact the University of Wolverhampton</h1>
+            <p>We're here to help with any questions you may have about studying with us, our courses, or life at the University.</p>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="Admissions">Admissions</option>
+                            <option value="Courses">Courses</option>
+                            <option value="International">International Students</option>
+                            <option value="Accommodation">Accommodation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <h3>Main Contact</h3>
+                <p><strong>Address:</strong> Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
+                <p><strong>Phone:</strong> +44 (0)1902 321000</p>
+                <p><strong>Email:</strong> enquiries@wlv.ac.uk</p>
+
+                <h3>Emergency Contacts</h3>
+                <p><strong>Security (24/7):</strong> +44 (0)1902 322555</p>
+                <p><strong>Student Support:</strong> +44 (0)1902 322020</p>
+
+                <div class="department-list">
+                    <h3>Key Departments</h3>
+                    <ul>
+                        <li><strong>Admissions:</strong> admissions@wlv.ac.uk</li>
+                        <li><strong>International Office:</strong> international@wlv.ac.uk</li>
+                        <li><strong>Student Services:</strong> studentservices@wlv.ac.uk</li>
+                        <li><strong>Careers Service:</strong> careers@wlv.ac.uk</li>
+                        <li><strong>Alumni Relations:</strong> alumni@wlv.ac.uk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h2>Find Us</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.980113842547!2d-2.130058023314743!3d52.58805277207905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487083cb0f37dc97%3A0x9cb8e3cc0509a0d0!2sUniversity%20of%20Wolverhampton!5e0!3m2!1sen!2suk!4v1746664490514!5m2!1sen!2suk" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="register.html">Book Visit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
+                <p>Phone: +44 (0)1902 321000</p>
+                <p>Email: info@wlv.ac.uk</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="/Users/tonmoy/Desktop/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="/Users/tonmoy/Desktop/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="/Users/tonmoy/Desktop/ig.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="/Users/tonmoy/Desktop/linkdln.png " alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 University of Wolverhampton. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will respond to you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

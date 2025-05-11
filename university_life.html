@@ -4,7 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Life - University of Wolverhampton</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* University Life Specific Styles */
+        .life-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .life-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .life-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .life-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .life-content {
+            padding: 20px;
+        }
+        
+        .life-content h2 {
+            color: #004A8F;
+            margin-bottom: 15px;
+        }
+        
+        .life-content p {
+            margin-bottom: 15px;
+        }
+        
+        .life-content a {
+            display: inline-block;
+            background: #004A8F;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .life-content a:hover {
+            background: #003366;
+        }
+        
+        .testimonials {
+            margin: 40px 0;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-card {
+            min-width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #004A8F;
+        }
+        
+        .video-tour {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .life-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,8 +132,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="register.html" class="active">Book Visit</a></li> 
-                <li><a href="university_life.html">University Life</a></li>
+                <li><a href="register.html">Book Visit</a></li>
+                <li><a href="university_life.html" class="active">University Life</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="news.html">News</a></li>
             </ul>
         </nav>
         <input type="text" placeholder="Search...">
@@ -25,67 +143,237 @@
 
     <main>
         <section class="intro">
-            <h1>Welcome to University Life</h1>
-            <p>At the University of Wolverhampton, university life is about more than just studying. It�s about personal growth, making new friends, experiencing new opportunities, and preparing for your future.</p>
+            <h1>Experience University Life at Wolverhampton</h1>
+            <p>Your university experience is about more than just studying - it's about personal growth, making lifelong friends, and discovering new opportunities. At the University of Wolverhampton, we offer a vibrant, supportive community where you can thrive both academically and personally.</p>
         </section>
 
-        <section class="life-section">
-            <h2>1. Student Accommodation</h2>
-            <p>We offer a range of safe, comfortable, and affordable student accommodations.</p>
-            <a href="https://www.wlv.ac.uk/accommodation">Explore accommodation options</a>
+        <div class="life-container">
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/accomodation.png " alt="Student Accommodation">
+                <div class="life-content">
+                    <h2>Student Accommodation</h2>
+                    <p>We offer a range of safe, comfortable, and affordable student accommodations across our campuses. Whether you prefer the buzz of city living or a quieter environment, we have options to suit every preference and budget.</p>
+                    <a href="https://www.wlv.ac.uk/accommodation">Explore accommodation options</a>
+                </div>
+            </div>
+
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/Student society.png  " alt="Student Union">
+                <div class="life-content">
+                    <h2>Student Union & Societies</h2>
+                    <p>Join over 100+ student societies and clubs, participate in events, and enjoy exclusive student discounts. From academic societies to cultural groups and special interest clubs, there's something for everyone.</p>
+                    <a href="https://www.wlv.ac.uk/studentsunion">Join a society today</a>
+                </div>
+            </div>
+
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/sports.png " alt="Sports Facilities">
+                <div class="life-content">
+                    <h2>Sports & Fitness</h2>
+                    <p>Stay fit with our top-class sports facilities, competitive teams, and recreational activities. Our £16 million sports center includes a gym, swimming pool, climbing wall, and spaces for over 40 different sports.</p>
+                    <a href="https://www.wlv.ac.uk/sport">Find out more about sports</a>
+                </div>
+            </div>
+
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/campus.jpeg " alt="Campus Facilities">
+                <div class="life-content">
+                    <h2>Campus Facilities & Social Spaces</h2>
+                    <p>Enjoy 24/7 libraries, cafés, study spaces, and IT support for a complete student experience. Our social spaces are designed to help you study, relax, and connect with fellow students.</p>
+                    <a href="https://www.wlv.ac.uk/facilities">Explore campus facilities</a>
+                </div>
+            </div>
+
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/careers.jpeg " alt="Career Opportunities">
+                <div class="life-content">
+                    <h2>Work & Career Opportunities</h2>
+                    <p>Find part-time jobs, internships, and career support to boost your employability. Our award-winning Careers Service offers one-to-one advice, workshops, and employer events throughout the year.</p>
+                    <a href="https://www.wlv.ac.uk/careers">Start planning your career</a>
+                </div>
+            </div>
+
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/abroad.png " alt="International Students">
+                <div class="life-content">
+                    <h2>International Student Experience</h2>
+                    <p>We support students from 130+ countries with visa guidance, cultural integration, and social events. Our dedicated International Office provides assistance from application through to graduation.</p>
+                    <a href="https://www.wlv.ac.uk/international">Learn about international student life</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="video-tour">
+            <h2>Explore Our Facilities</h2>
+            <p>See what life at Wolverhampton is really like</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6BcnxY_R-QM?si=n1f6i7hD4U8nasMp" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                </iframe>
+            </div>
         </section>
 
-        <section class="life-section">
-            <h2>2. Student Union & Societies</h2>
-            <p>Join over 100+ student societies and clubs, participate in events, and enjoy student discounts.</p>
-            <a href="https://www.wlv.ac.uk/studentsunion">Join a society today</a>
+        <section class="testimonials">
+            <h2>Hear From Our Students</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The support I've received at Wolverhampton has been incredible. The lecturers genuinely care about your success, and there are so many opportunities to get involved in campus life."</p>
+                    <p class="testimonial-author">- Mohammed, Business Management</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Coming from overseas, I was nervous about adjusting, but the international student community here made me feel at home right away. The university organizes great events to help you settle in."</p>
+                    <p class="testimonial-author">- Tonmoy, Computer Science</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The sports facilities are amazing! I've been able to continue competing at a high level while pursuing my degree, thanks to the university's excellent sports scholarship program."</p>
+                    <p class="testimonial-author">- Obaida, Sports Science</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"What I love most about Wolverhampton is how practical the courses are. We're always working on real-world projects and getting hands-on experience that prepares us for our careers."</p>
+                    <p class="testimonial-author">- Shafim, Engineering</p>
+                </div>
+            </div>
         </section>
 
-        <section class="life-section">
-            <h2>3. Sports & Fitness</h2>
-            <p>Stay fit with our top-class sports facilities, competitive teams, and recreational activities.</p>
-            <a href="https://www.wlv.ac.uk/sport">Find out more about sports</a>
-        </section>
+        <div class="life-container">
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/event.png " alt="University Events">
+                <div class="life-content">
+                    <h2>Events & Nightlife</h2>
+                    <p>Enjoy live music, student nights, comedy shows, and cultural events across the city. Our Students' Union organizes regular events including club nights, quizzes, and themed parties.</p>
+                    <a href="https://www.wlv.ac.uk/events">See upcoming events</a>
+                </div>
+            </div>
 
-        <section class="life-section">
-            <h2>4. Campus Facilities & Social Spaces</h2>
-            <p>Enjoy 24/7 libraries, caf�s, study spaces, and IT support for a complete student experience.</p>
-            <a href="https://www.wlv.ac.uk/facilities">Explore campus facilities</a>
-        </section>
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/mental.png " alt="Wellbeing Support">
+                <div class="life-content">
+                    <h2>Mental Health & Wellbeing</h2>
+                    <p>Our university offers 24/7 support, counseling services, and stress management workshops. We have a dedicated Wellbeing Team to help you with any challenges you might face.</p>
+                    <a href="https://www.wlv.ac.uk/wellbeing">Find support when you need it</a>
+                </div>
+            </div>
 
-        <section class="life-section">
-            <h2>5. Work & Career Opportunities</h2>
-            <p>Find part-time jobs, internships, and career support to boost your employability.</p>
-            <a href="https://www.wlv.ac.uk/careers">Start planning your career</a>
-        </section>
+            <div class="life-card">
+                <img src="/Users/tonmoy/Desktop/travel.jpeg " alt="Transport Options">
+                <div class="life-content">
+                    <h2>Travel & Transport</h2>
+                    <p>Travel easily with our shuttle buses, student discounts, and bike-friendly pathways. Wolverhampton's central location makes it easy to explore the UK, with excellent transport links.</p>
+                    <a href="https://www.wlv.ac.uk/travel">Plan your journey</a>
+                </div>
+            </div>
+        </div>
 
-        <section class="life-section">
-            <h2>6. International Student Experience</h2>
-            <p>We support students from 130+ countries with visa guidance, cultural integration, and social events.</p>
-            <a href="https://www.wlv.ac.uk/international">Learn about international student life</a>
-        </section>
-
-        <section class="life-section">
-            <h2>7. Events & Nightlife</h2>
-            <p>Enjoy live music, student nights, comedy shows, and cultural events across the city.</p>
-            <a href="https://www.wlv.ac.uk/events">See upcoming events</a>
-        </section>
-
-        <section class="life-section">
-            <h2>8. Mental Health & Wellbeing</h2>
-            <p>Our university offers 24/7 support, counseling services, and stress management workshops.</p>
-            <a href="https://www.wlv.ac.uk/wellbeing">Find support when you need it</a>
-        </section>
-
-        <section class="life-section">
-            <h2>9. Travel & Transport</h2>
-            <p>Travel easily with our shuttle buses, student discounts, and bike-friendly pathways.</p>
-            <a href="https://www.wlv.ac.uk/travel">Plan your journey</a>
+        <section class="quick-facts">
+            <h2>Quick Facts About Student Life</h2>
+            <div class="facts-grid">
+                <div class="fact-item">
+                    <h3>£6 million</h3>
+                    <p>Invested annually in student support services</p>
+                </div>
+                <div class="fact-item">
+                    <h3>94%</h3>
+                    <p>Of our graduates are employed or in further study within 6 months</p>
+                </div>
+                <div class="fact-item">
+                    <h3>130+</h3>
+                    <p>Countries represented in our student community</p>
+                </div>
+                <div class="fact-item">
+                    <h3>24/7</h3>
+                    <p>Library access during exam periods</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 University of Wolverhampton. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="register.html">Book Visit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Wulfruna Street, Wolverhampton, WV1 1LY, UK</p>
+                <p>Phone: +44 (0)1902 321000</p>
+                <p>Email: info@wlv.ac.uk</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="/Users/tonmoy/Desktop/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="/Users/tonmoy/Desktop/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="/Users/tonmoy/Desktop/ig.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="/Users/tonmoy/Desktop/linkdln.png " alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 University of Wolverhampton. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
     </footer>
+
+    <script>
+        // Simple testimonial slider functionality
+        const slider = document.querySelector('.testimonial-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Auto-scroll testimonials
+        setInterval(() => {
+            if(!isDown) {
+                const firstCard = document.querySelector('.testimonial-card');
+                const cardWidth = firstCard.offsetWidth + 20; // including gap
+                
+                if(slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 50) {
+                    slider.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    slider.scrollBy({
+                        left: cardWidth,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }, 5000);
+    </script>
 </body>
 </html>
